@@ -1,0 +1,89 @@
+.sims1-needs-container {
+    width: 700px;
+    margin: auto;
+}
+
+.sims1-needs-container h1 {
+    color: #1953DD;
+}
+
+.sims1-needs {
+    background-color: #040263;
+    color: #CAD0DD;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    width: 700px;
+    height: 220px;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.sims1-needs h2 {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 26px;
+    line-height: .8;
+}
+
+.sims1-needs .illustration img {
+    height: 205px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.sims1-need-bar {
+    width: 140px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.sims1-needs .need-bars-col {
+    &:first-child {
+        margin-left: 10px;
+        margin-right: 60px;
+    }
+}
+
+.sims1-need-progressbar {
+    height: 10px;
+    background-color: #455E5D;
+}
+
+.sims1-need-progressbar.sims1-70-min {
+    background-color: #425D5B;
+
+    .subbar {
+        background-color: #00BE3A;
+    }
+}
+
+.sims1-need-progressbar.sims1-50-min {
+    background-color: #63454A;
+
+    .subbar {
+        background-color: #08B242;
+    }
+}
+
+.sims1-need-progressbar.sims1-30-min {
+    background-color: #942828;
+
+    .subbar {
+        background-color: #228E4A;
+    }
+}
+
+.sims1-need-progressbar.sims1-10-min {
+    background-color: #A90F13;
+
+    .subbar {
+        background-color: #336B5D;
+    }
+}
+
+.sims1-need-progressbar.sims1-0-min {
+    background-color: #C20105;
+
+    .subbar {
+        background-color: #444D6C;
+    }
+}

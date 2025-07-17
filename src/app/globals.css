@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8FAFC;
+  --foreground: #101828;
 }
 
 @theme inline {
@@ -12,15 +12,36 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Slackey';
+  src: url('/fonts/Slackey-Regular.ttf') format('truetype');
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/assets/background.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.font-comic {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.filters {
+  width: 850px;
+}
+
+h1 {
+  font-family: "Slackey", sans-serif;
+}
+
+.subtitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.1rem;
+}
+
+.game-needs {
+  height: 480px;
 }

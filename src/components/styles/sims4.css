@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('/fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+.sims4-needs-container {
+    width: 700px;
+    margin: auto;
+}
+
+.sims4-needs-container h1 {
+    color: #1953DD;
+}
+
+.sims4-needs {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    color: #2D5B9E;
+    font-weight: bold;
+    width: 700px;
+    height: 350px;
+    padding: 0;
+    background-color: #E2E8F1;
+    border-radius: 20px;
+}
+
+.sims4-needs h2 {
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sims4-needs-content {
+    padding: 10px;
+    position: relative;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.sims4-needs-content {
+    &>div:nth-child(1) {
+        border-radius: 15px 0 0 0;
+        overflow: hidden;
+    }
+
+    &>div:nth-child(2) {
+        border-radius: 0 15px 0 0;
+        overflow: hidden;
+    }
+
+    &>div:nth-child(5) {
+        border-radius: 0 0 0 15px;
+        overflow: hidden;
+    }
+
+    &>div:nth-child(6) {
+        border-radius: 0 0 15px 0;
+        overflow: hidden;
+    }
+}
+
+.sims4-need-bar {
+    background-color: #EBEEF4;
+    border: 1px solid #DCDAD8;
+    font-size: 18px;
+}
+
+.sims4-need-label {
+    width: 100%;
+    height: 40px;
+    background-color: #FFF;
+}
+
+.sims4-need-progressbar {
+    height: 35px;
+    width: 250px;
+    border-top: 2px solid #81a475;
+    border-bottom: 1px solid #81a475;
+    background-color: #222;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sims4-need-progressbar-icon-container {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    width: 58px;
+    background-color: #EBEEF4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    border-radius: 100%;
+}
+
+.sims4-need-progressbar-icon-content {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: -2px 2px 10px rgba(132, 132, 132, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sims4-need-progressbar-icon-img {
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+/* Glossy Overlay */
+.sims4-need-progressbar-icon-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.382),
+            rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sims4-need-progressbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.382),
+            rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sims4-need-progressbar .subbar.remove-end-border {
+    border-right: none;
+}
+
+
+.sims4-85-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #7ADC54;
+        border: 2px solid #a2a7a1;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #478D34;
+
+        .subbar {
+            background-color: #7ADC54;
+        }
+    }
+}
+
+.sims4-50-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #74d956;
+        border: 2px solid #54a73d;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #538ABC;
+
+        .subbar {
+            background-color: #53c729;
+        }
+    }
+}
+
+.sims4-35-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #73d350;
+        border: 2px solid #54a73d;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #538ABC;
+
+        .subbar {
+            background-color: #68bd49;
+        }
+    }
+}
+
+.sims4-25-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #60b042;
+        border: 2px solid #9ba3a3;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #47909d;
+
+        .subbar {
+            background-color: #57b137;
+        }
+    }
+}
+
+.sims4-15-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #eadd23;
+        border: 2px solid #a8abab;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #e4d722;
+
+        .subbar {
+            background-color: #3e818d;
+        }
+    }
+}
+
+.sims4-5-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #ff9326;
+        border: 2px solid #9a9f9f;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #f38b24;
+
+        .subbar {
+            background-color: #3e818d;
+        }
+    }
+}
+
+
+.sims4-0-min {
+    .sims4-need-progressbar-icon-content {
+        background-color: #f3652d;
+        border: 2px solid #94a0a2;
+    }
+
+    .sims4-need-progressbar {
+        background-color: #ed591e;
+
+        .subbar {
+            background-color: #3e818d;
+        }
+    }
+}

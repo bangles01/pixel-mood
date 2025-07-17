@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'Benguiat Gothic';
+    src: url('/fonts/BenguiatGothic-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Benguiat Gothic';
+    src: url('/fonts/BenguiatGothic-Medium.ttf') format('truetype');
+    font-weight: medium;
+}
+
+.sims2-needs-container {
+    width: 700px;
+    margin: auto;
+}
+
+.sims2-needs-container h1 {
+    color: #1953DD;
+}
+
+.sims2-layout {
+    padding: 10px;
+    background: #5664C0;
+    background: linear-gradient(0deg, rgba(86, 100, 192, 1) 0%, rgba(90, 104, 195, 1) 10%, rgba(92, 106, 196, 1) 20%, rgba(93, 108, 197, 1) 30%, rgba(95, 110, 198, 1) 40%, rgba(96, 112, 199, 1) 50%, rgba(98, 113, 200, 1) 60%, rgba(99, 114, 200, 1) 70%, rgba(102, 117, 202, 1) 80%, rgba(107, 120, 204, 1) 90%, rgba(111, 123, 206, 1) 100%);
+    border-radius: 20px;
+}
+
+.sims2-needs {
+    position: relative;
+    background: linear-gradient(to bottom, #949BDB, #8891D6);
+    background: linear-gradient(0deg, rgba(93, 107, 193, 1) 0%, rgba(98, 111, 195, 1) 10%, rgba(103, 117, 200, 1) 20%, rgba(105, 120, 201, 1) 30%, rgba(108, 122, 202, 1) 40%, rgba(115, 128, 206, 1) 50%, rgba(122, 134, 211, 1) 60%, rgba(127, 139, 213, 1) 70%, rgba(133, 144, 216, 1) 80%, rgba(139, 149, 218, 1) 90%, rgba(146, 154, 221, 1) 100%);
+    font-family: 'Benguiat Gothic', sans-serif;
+    color: #081066;
+    font-weight: bold;
+    width: 680px;
+    height: 270px;
+    border-radius: 20px;
+    padding: 0px 0px;
+}
+
+.sims2-needs h2 {
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sims2-needs .illustration img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.sims2-need-bar {
+    width: 170px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sims2-needs .need-bars-col {
+    &:first-child {
+        margin-left: 10px;
+        margin-right: 60px;
+    }
+}
+
+.sims2-need-progressbar {
+    height: 14px;
+    border: 1px solid #000;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Glossy Overlay */
+.sims2-need-progressbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.1));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sims2-need-progressbar .subbar {
+    border-right: 4px solid #000;
+}
+
+.sims2-need-progressbar .subbar.remove-end-border {
+    border-right: none;
+}
+
+
+.sims2-need-progressbar.sims2-80-min {
+    background-color: #465E5E;
+
+    .subbar {
+        background-color: #20D151;
+    }
+}
+
+.sims2-need-progressbar.sims2-65-min {
+    background-color: #67744B;
+
+    .subbar {
+        background-color: #11B142;
+    }
+}
+
+.sims2-need-progressbar.sims2-50-min {
+    background-color: #A19D2F;
+
+    .subbar {
+        background-color: #1D9A47;
+    }
+}
+
+.sims2-need-progressbar.sims2-35-min {
+    background-color: #CABD1A;
+
+    .subbar {
+        background-color: #24874F;
+    }
+}
+
+.sims2-need-progressbar.sims2-20-min {
+    background-color: #e1c329;
+
+    .subbar {
+        background-color: #3B615C;
+    }
+}
+
+.sims2-need-progressbar.sims2-10-min {
+    background-color: #e67b11;
+
+    .subbar {
+        background-color: #3B615C;
+    }
+}
+
+.sims2-need-progressbar.sims2-0-min {
+    background-color: #D52708;
+
+    .subbar {
+        background-color: #3B615C;
+    }
+}
+
+.sims2-needs-content {
+    padding: 10px 0;
+    border-top: 2px solid #465096;
+    border-right: 2px solid #465096;
+    border-bottom: 2px solid #465096;
+    border-radius: 0 20px 20px 0;
+}
+
+.shadow-top-saver {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    width: 200px;
+    height: 10px;
+    border-radius: 40px 0 0 0;
+    background: transparent;
+    border-top: 2px solid #465096;
+    border-left: 2px solid #465096;
+}
+
+.shadow-bottom-saver {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 10px;
+    margin-left: 75px;
+    border-radius: 0 0 0 5px;
+    border-bottom: 2px solid #465096;
+}

@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('/fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+.sims3-needs-container {
+    width: 700px;
+    margin: auto;
+}
+
+.sims3-needs-container h1 {
+    color: #1953DD;
+}
+
+.sims3-needs {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    color: #2D5B9E;
+    font-weight: bold;
+    width: 700px;
+    height: 307px;
+    padding: 0;
+}
+
+.sims3-needs h2 {
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sims3-needs img {
+    height: 100%;
+    margin-right: 10px;
+    position: absolute;
+}
+
+.sims3-needs-content {
+    padding: 70px 40px 20px 40px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.sims3-need-bar {
+    background-color: #71A1D6;
+    border-radius: 10px;
+    border: 2px solid #467AB2;
+    padding: 5px 65px;
+    font-size: 18px;
+}
+
+.sims3-need-bar span {
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.sims3-need-progressbar {
+    height: 16px;
+    border: 1px solid #306240;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Glossy Overlay */
+.sims3-need-progressbar::before {
+    content: '';
+    position: absolute;
+    top: 1;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.1));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sims3-need-progressbar .subbar {
+    border-right: 2px solid #2d4d6b;
+}
+
+.sims3-need-progressbar .subbar.remove-end-border {
+    border-right: none;
+}
+
+
+.sims3-need-progressbar.sims3-85-min {
+    background-color: #538ABC;
+
+    .subbar {
+        background-color: #12c915;
+    }
+}
+
+.sims3-need-progressbar.sims3-50-min {
+    background-color: #538ABC;
+
+    .subbar {
+        background-color: #53c729;
+    }
+}
+
+.sims3-need-progressbar.sims3-35-min {
+    background-color: #538ABC;
+
+    .subbar {
+        background-color: #68bd49;
+    }
+}
+
+.sims3-need-progressbar.sims3-25-min {
+    background-color: #64868c;
+
+    .subbar {
+        background-color: #529939;
+    }
+}
+
+.sims3-need-progressbar.sims3-15-min {
+    background-color: #d0c830;
+
+    .subbar {
+        background-color: #64868c;
+    }
+}
+
+.sims3-need-progressbar.sims3-5-min {
+    background-color: #d1a30c;
+
+    .subbar {
+        background-color: #64868c;
+    }
+}
+
+.sims3-need-progressbar.sims3-0-min {
+    background-color: #c6420e;
+
+    .subbar {
+        background-color: #64868c;
+    }
+}
