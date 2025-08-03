@@ -89,12 +89,11 @@
     left: 5px;
     bottom: 5px;
     width: 58px;
-    background-color: #EBEEF4;
+    background-color: #EBEEF4 !important;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
-    border-radius: 100%;
 }
 
 .sims4-need-progressbar-icon-content {

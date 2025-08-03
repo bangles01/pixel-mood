@@ -4,10 +4,9 @@ import '../styles/sims4.css';
 type Sims4NeedsProps = {
     label: string;
     value: number;
-    icon: string;
 };
 
-export default function Sims4NeedBar({ label, value, icon }: Sims4NeedsProps) {
+export default function Sims4NeedBar({ label, value }: Sims4NeedsProps) {
     const normalizedValue: number = 15 + (value / 100) * 85;
 
     return (
