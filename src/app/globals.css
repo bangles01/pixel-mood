@@ -30,7 +30,8 @@ body {
 }
 
 .filters {
-  width: 850px;
+  max-width: 850px;
+  width: 100%;
 }
 
 h1 {
@@ -42,6 +43,128 @@ h1 {
   font-size: 1.1rem;
 }
 
+.game-needs-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 30px;
+  height: 400px;
+  margin-bottom: 50px;
+}
+
 .game-needs {
-  height: 480px;
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive scaling for game needs */
+@media (max-width: 1200px) {
+  .game-needs-wrapper {
+    height: 380px;
+    margin-bottom: 10px;
+  }
+  .game-needs {
+    transform: scale(0.9);
+  }
+  .filters {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .game-needs-wrapper {
+    height: 350px;
+    margin-bottom: 0 !important;
+  }
+  .game-needs {
+    transform: scale(0.8);
+  }
+  .filters {
+    max-width: 600px;
+    font-size: 1rem;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    input {
+      height: 9px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .game-needs-wrapper {
+    height: 360px;
+  }
+  .game-needs {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 640px) {
+  .game-needs-wrapper {
+    height: 340px;
+  }
+  .game-needs {
+    transform: scale(0.75);
+  }
+}
+
+@media (max-width: 580px) {
+  .game-needs-wrapper {
+    height: 320px;
+  }
+  .game-needs {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 520px) {
+  .game-needs-wrapper {
+    height: 300px;
+  }
+  .game-needs {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-width: 480px) {
+  .game-needs-wrapper {
+    height: 270px;
+    margin-top: 20px;
+  }
+  .game-needs {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 440px) {
+  .game-needs-wrapper {
+    height: 260px;
+  }
+  .game-needs {
+    transform: scale(0.54);
+  }
+}
+
+@media (max-width: 400px) {
+  .game-needs-wrapper {
+    height: 240px;
+  }
+  .game-needs {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-width: 360px) {
+  .game-needs-wrapper {
+    height: 200px;
+  }
+  .game-needs {
+    transform: scale(0.4);
+  }
 }

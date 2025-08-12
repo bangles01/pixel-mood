@@ -33,7 +33,7 @@ export default function Home() {
       await new Promise(r => setTimeout(r, 50));
       const dataUrl = await domtoimage.toPng(activeGameNeeds, {
         quality: 1,
-        bgcolor: null,
+        bgcolor: undefined,
         width: activeGameNeeds.offsetWidth * 2,
         height: activeGameNeeds.offsetHeight * 2,
         style: {
@@ -57,7 +57,7 @@ export default function Home() {
     <main className="max-w-4xl mx-auto p-4">
       <h1 className="text-4xl font-bold mt-10 mb-2 text-center text-slate-700">Sims Mood</h1>
       <h2 className="subtitle text-lg font-semibold text-center text-slate-700">Track your mood like a sim</h2>
-      <div className="filters grid grid-cols-2 gap-4 gap-x-24 mt-20 mx-auto bg-white px-16 py-12 rounded-4xl shadow-lg">
+      <div className="filters grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-24 mt-20 mx-auto bg-white px-8 md:px-16 py-12 rounded-4xl shadow-lg">
         {moods.map(mood => (
           <div key={mood}>
             <MoodSlider label={mood} value={values[mood]} onChange={(value) => handleChange(mood, value)}/>
@@ -65,18 +65,26 @@ export default function Home() {
         ))}
       </div>
 
-      <div ref={gameNeedsRef} className="pt-10">
-        <div className={`game-needs ${version === 0 ? 'flex' : 'hidden'}`}>
-          <Sims1Needs moods={values}/>
+      <div ref={gameNeedsRef} className="pt-10 flex justify-center">
+        <div className={`game-needs-wrapper ${version === 0 ? 'flex' : 'hidden'}`}>
+          <div className="game-needs">
+            <Sims1Needs moods={values}/>
+          </div>
         </div>
-        <div className={`game-needs ${version === 1 ? 'flex' : 'hidden'}`}>
-          <Sims2Needs moods={values}/>
+        <div className={`game-needs-wrapper ${version === 1 ? 'flex' : 'hidden'}`}>
+          <div className="game-needs">
+            <Sims2Needs moods={values}/>
+          </div>
         </div>
-        <div className={`game-needs ${version === 2 ? 'flex' : 'hidden'}`}>
-          <Sims3Needs moods={values}/>
+        <div className={`game-needs-wrapper ${version === 2 ? 'flex' : 'hidden'}`}>
+          <div className="game-needs">
+            <Sims3Needs moods={values}/>
+          </div>
         </div>
-        <div className={`game-needs ${version === 3 ? 'flex' : 'hidden'}`}>
-          <Sims4Needs moods={values}/>
+        <div className={`game-needs-wrapper ${version === 3 ? 'flex' : 'hidden'}`}>
+          <div className="game-needs">
+            <Sims4Needs moods={values}/>
+          </div>
         </div>
       </div>
 
