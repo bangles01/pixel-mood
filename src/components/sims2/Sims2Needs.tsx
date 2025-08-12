@@ -20,7 +20,7 @@ export default function Sims2Needs({ moods }: Sims2NeedsProps) {
                     <div className="illustration flex items-center">
                         <img src={`/assets/sims2/illustration.png`} alt="Sims2 Needs" className="rounded-tl-xl rounded-bl-xl" />
                     </div>
-                    <div className="w-full pt-2 sims2-needs-content">
+                    <div className="flex-1 flex pt-2 sims2-needs-content">
                         <div>
                             <h2 className="text-2xl font-medium p-0 m-0">Needs</h2>
                             <div className="flex items-center justify-center">
