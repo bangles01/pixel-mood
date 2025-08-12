@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sims Mood - Track your mood like a sim",
+  title: "Pixel Mood - Track your mood like a sim",
   description: "A simple app to track your mood like a sim.",
   icons: {
     icon: "/favicon.png",
