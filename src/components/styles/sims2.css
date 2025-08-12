@@ -165,7 +165,7 @@
     position: absolute;
     top: 0;
     left: 7px;
-    width: 200px;
+    width: 300px;
     height: 10px;
     border-radius: 40px 0 0 0;
     background: transparent;
@@ -177,7 +177,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 120px;
+    width: 300px;
     height: 10px;
     margin-left: 75px;
     border-radius: 0 0 0 5px;
