@@ -16,6 +16,7 @@ export default function Home() {
     Object.fromEntries(moods.map(m => [m, 50]))
   );
   const [version, setVersion] = useState(1);
+  const [isSharing, setIsSharing] = useState(false);
   const gameNeedsRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (mood: string, value: number) => {
@@ -25,32 +26,74 @@ export default function Home() {
   const handleShare = async () => {
     if (!gameNeedsRef.current) return;
 
-    const activeGameNeeds = gameNeedsRef.current.querySelector('.game-needs:not(.hidden)') as HTMLElement;
+    const activeGameNeeds = gameNeedsRef.current.querySelector('.game-needs-wrapper.flex .game-needs') as HTMLElement;
     if (!activeGameNeeds) return;
 
-    try {
-      await document.fonts.ready;
-      await new Promise(r => setTimeout(r, 50));
-      const dataUrl = await domtoimage.toPng(activeGameNeeds, {
-        quality: 1,
-        bgcolor: undefined,
-        width: activeGameNeeds.offsetWidth * 2,
-        height: activeGameNeeds.offsetHeight * 2,
-        style: {
-          transform: 'scale(2)',
-          transformOrigin: 'top left'
-        }
-      });
+    setIsSharing(true);
 
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.download = `sims-mood-${Date.now()}.png`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    try {
+      await prepareForCapture();
+      await generateAndShareImage(activeGameNeeds);
     } catch (error) {
       console.error('Erreur lors de la capture:', error);
+    } finally {
+      setIsSharing(false);
     }
+  };
+
+  const prepareForCapture = async () => {
+    await document.fonts.ready;
+    await new Promise(resolve => setTimeout(resolve, 50));
+  };
+
+  const createImageOptions = () => ({
+    quality: 1,
+    bgcolor: undefined,
+    width: 800,
+    height: 500,
+    style: {
+      transform: 'scale(1)',
+      transformOrigin: 'top left',
+      width: '800px',
+      height: '500px'
+    }
+  });
+
+  const generateAndShareImage = async (element: HTMLElement) => {
+    const options = createImageOptions();
+    await domtoimage.toPng(element, options);
+
+    // Need double generation to fix domtoimage bug on images
+    // https://github.com/tsayen/dom-to-image/issues/343
+    const dataUrl = await domtoimage.toPng(element, options);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    await shareOrDownloadImage(dataUrl);
+  };
+
+  const shareOrDownloadImage = async (dataUrl: string) => {
+    const response = await fetch(dataUrl);
+    const blob = await response.blob();
+    const file = new File([blob], `sims-mood-${Date.now()}.png`, { type: 'image/png' });
+
+    if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({
+          files: [file]
+        });
+        return;
+      } catch (error) {
+        console.error('Error when sharing:', error);
+      }
+    }
+
+    // Fallback: classic download
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = `sims-mood-${Date.now()}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -89,7 +132,7 @@ export default function Home() {
       </div>
 
       <div className="text-center mt-4">
-        <ShareBtn onClick={handleShare} />
+        <ShareBtn onClick={handleShare} isLoading={isSharing} />
       </div>
 
       <div className="text-center text-slate-500 mt-20">
