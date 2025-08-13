@@ -5,6 +5,7 @@ export const translations = {
     gameVersion: "Choisissez votre version du jeu",
     share: "Partager",
     generating: "Génération en cours...",
+    contact: "Une question ou un retour ? Écrivez-nous à",
     sims1: {
       hunger: "Appétit",
       energy: "Energie",
@@ -48,6 +49,7 @@ export const translations = {
     gameVersion: "Choose your game version",
     share: "Share",
     generating: "Generating...",
+    contact: "Questions or feedback? Write to us at",
     sims1: {
       hunger: "Hunger",
       energy: "Energy",

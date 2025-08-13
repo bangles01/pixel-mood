@@ -172,6 +172,15 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <footer className="text-center text-sm text-slate-400 mt-14 pt-4 border-t border-slate-200">
+        <p>
+          {t('contact')}{' '}
+          <a href="mailto:contact@pixelmood.fr" className="text-slate-500 hover:text-slate-700 underline">
+            contact@pixelmood.fr
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }
