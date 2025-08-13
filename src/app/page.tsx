@@ -115,8 +115,8 @@ export default function Home() {
       <h1 className="text-4xl font-bold mt-10 mb-2 text-center text-slate-700">Pixel Mood</h1>
       <h2 className="subtitle text-lg font-semibold text-center text-slate-700">Track your mood like a sim</h2>
       <div className="filters grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-24 mt-20 mx-auto bg-white px-8 md:px-16 py-12 rounded-4xl shadow-lg">
-        {activeFilters.map(mood => (
-          <div key={mood}>
+        {activeFilters.map((mood, index) => (
+          <div key={mood} className={`${index === activeFilters.length / 2 ? 'pt-12 md:pt-0' : ''}`}>
             <MoodSlider label={mood} value={values[mood]} onChange={(value) => handleChange(mood, value)}/>
           </div>
         ))}

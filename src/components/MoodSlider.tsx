@@ -22,7 +22,7 @@ export default function MoodSlider({ label, value, onChange }: MoodSliderProps) 
                     step="5"
                     value={value}
                     onChange={(e) => onChange(parseInt(e.target.value))}
-                    className="w-full lg:h-2 rounded-lg appearance-none bg-slate-200 accent-blue-500 focus:outline-none"
+                    className="w-full h-3 md:h-2 rounded-lg appearance-none bg-slate-200 accent-blue-500 focus:outline-none cursor-pointer slider-mobile"
                 />
             </div>
         </div>
