@@ -29,6 +29,13 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
+.language-toggle {
+  position: fixed;
+  right: calc(var(--spacing) * 15);
+  top: calc(var(--spacing) * 8);
+  z-index: 10;
+}
+
 .filters {
   max-width: 850px;
   width: 100%;
@@ -66,9 +73,11 @@ h1 {
     height: 380px;
     margin-bottom: 10px;
   }
+
   .game-needs {
     transform: scale(0.9);
   }
+
   .filters {
     max-width: 700px;
   }
@@ -79,9 +88,11 @@ h1 {
     height: 350px;
     margin-bottom: 0 !important;
   }
+
   .game-needs {
     transform: scale(0.8);
   }
+
   .filters {
     max-width: 600px;
     font-size: 1rem;
@@ -100,8 +111,25 @@ h1 {
   .game-needs-wrapper {
     height: 360px;
   }
+
   .game-needs {
     transform: scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: fit-content;
+    padding-top: 40px;
+    margin: 0 auto;
+  }
+
+  .contact p {
+    padding: 16px 0;
   }
 }
 
@@ -109,6 +137,7 @@ h1 {
   .game-needs-wrapper {
     height: 340px;
   }
+
   .game-needs {
     transform: scale(0.75);
   }
@@ -118,6 +147,7 @@ h1 {
   .game-needs-wrapper {
     height: 320px;
   }
+
   .game-needs {
     transform: scale(0.7);
   }
@@ -127,6 +157,7 @@ h1 {
   .game-needs-wrapper {
     height: 300px;
   }
+
   .game-needs {
     transform: scale(0.65);
   }
@@ -137,6 +168,7 @@ h1 {
     height: 270px;
     margin-top: 20px;
   }
+
   .game-needs {
     transform: scale(0.6);
   }
@@ -146,6 +178,7 @@ h1 {
   .game-needs-wrapper {
     height: 260px;
   }
+
   .game-needs {
     transform: scale(0.54);
   }
@@ -155,6 +188,7 @@ h1 {
   .game-needs-wrapper {
     height: 240px;
   }
+
   .game-needs {
     transform: scale(0.5);
   }
@@ -164,6 +198,7 @@ h1 {
   .game-needs-wrapper {
     height: 200px;
   }
+
   .game-needs {
     transform: scale(0.4);
   }

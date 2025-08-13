@@ -6,7 +6,7 @@ export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="fixed top-6 right-10 z-10">
+    <div className="language-toggle">
       <button
         onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
         className="bg-white/80 py-2 px-2 rounded-3xl shadow-sm flex cursor-pointer"
