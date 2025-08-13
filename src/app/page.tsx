@@ -9,19 +9,33 @@ import Sims3Needs from '@/components/sims3/Sims3Needs';
 import Sims4Needs from '@/components/sims4/Sims4Needs';
 import ShareBtn from "@/components/ShareBtn";
 
-const moods = ['hunger', 'energy', 'comfort', 'fun', 'hygiene', 'social', 'bladder', 'room'];
+const allMoods = ['hunger', 'energy', 'comfort', 'fun', 'hygiene', 'social', 'bladder', 'room'];
+const sims3Moods = ['hunger', 'social', 'bladder', 'hygiene', 'energy', 'fun'];
+const sims4Moods = ['bladder', 'fun', 'hunger', 'social', 'energy', 'hygiene'];
 
 export default function Home() {
   const [values, setValues] = useState(
-    Object.fromEntries(moods.map(m => [m, 50]))
+    Object.fromEntries(allMoods.map(m => [m, 50]))
   );
   const [version, setVersion] = useState(1);
   const [isSharing, setIsSharing] = useState(false);
+  const [activeFilters, setActiveFilters] = useState(allMoods);
   const gameNeedsRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (mood: string, value: number) => {
     setValues(prev => ({ ...prev, [mood]: value }));
   };
+
+  const handleVersionChange = (newVersion: number) => {
+    setVersion(newVersion);
+    if (newVersion === 2) {
+      setActiveFilters(sims3Moods);
+    } else if (newVersion === 3) {
+      setActiveFilters(sims4Moods);
+    } else {
+      setActiveFilters(allMoods);
+    }
+  }
 
   const handleShare = async () => {
     if (!gameNeedsRef.current) return;
@@ -101,7 +115,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold mt-10 mb-2 text-center text-slate-700">Pixel Mood</h1>
       <h2 className="subtitle text-lg font-semibold text-center text-slate-700">Track your mood like a sim</h2>
       <div className="filters grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-24 mt-20 mx-auto bg-white px-8 md:px-16 py-12 rounded-4xl shadow-lg">
-        {moods.map(mood => (
+        {activeFilters.map(mood => (
           <div key={mood}>
             <MoodSlider label={mood} value={values[mood]} onChange={(value) => handleChange(mood, value)}/>
           </div>
@@ -141,7 +155,7 @@ export default function Home() {
           {[0, 1, 2, 3].map((v) => (
             <button
               key={v}
-              onClick={() => setVersion(v)}
+              onClick={() => handleVersionChange(v)}
               className="px-1 py-2 rounded cursor-pointer"
             >
               <img
