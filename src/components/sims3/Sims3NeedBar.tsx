@@ -1,5 +1,6 @@
 // src/components/Sims3NeedBar.tsx
 import '../styles/sims3.css';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 type Sims3NeedsProps = {
     label: string;
@@ -7,10 +8,11 @@ type Sims3NeedsProps = {
 };
 
 export default function Sims3NeedBar({ label, value }: Sims3NeedsProps) {
+    const { getVersionTranslation } = useLanguage();
     return (
         <div className="text-center sims3-need-bar">
             <div>
-                <span>{label}</span>
+                <span>{getVersionTranslation(2, label)}</span>
             </div>
             <div className={`w-full sims3-need-progressbar overflow-hidden 
                 ${value > 85 ? 'sims3-85-min' :

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import domtoimage from 'dom-to-image';
 import Sims1Needs from '@/components/sims1/Sims1Needs';
 import MoodSlider from '@/components/MoodSlider';
@@ -8,12 +9,14 @@ import Sims2Needs from '@/components/sims2/Sims2Needs';
 import Sims3Needs from '@/components/sims3/Sims3Needs';
 import Sims4Needs from '@/components/sims4/Sims4Needs';
 import ShareBtn from "@/components/ShareBtn";
+import LanguageToggle from '@/components/LanguageToggle';
 
 const allMoods = ['hunger', 'energy', 'comfort', 'fun', 'hygiene', 'social', 'bladder', 'room'];
 const sims3Moods = ['hunger', 'social', 'bladder', 'hygiene', 'energy', 'fun'];
 const sims4Moods = ['bladder', 'fun', 'hunger', 'social', 'energy', 'hygiene'];
 
 export default function Home() {
+  const { t } = useLanguage();
   const [values, setValues] = useState(
     Object.fromEntries(allMoods.map(m => [m, 50]))
   );
@@ -49,7 +52,7 @@ export default function Home() {
       await prepareForCapture();
       await generateAndShareImage(activeGameNeeds);
     } catch (error) {
-      console.error('Erreur lors de la capture:', error);
+      console.error("Error during capture:", error);
     } finally {
       setIsSharing(false);
     }
@@ -97,7 +100,7 @@ export default function Home() {
         });
         return;
       } catch (error) {
-        console.error('Error when sharing:', error);
+        console.error("Error when sharing:", error);
       }
     }
 
@@ -112,12 +115,13 @@ export default function Home() {
 
   return (
     <main className="max-w-4xl mx-auto p-4">
-      <h1 className="text-4xl font-bold mt-10 mb-2 text-center text-slate-700">Pixel Mood</h1>
-      <h2 className="subtitle text-lg font-semibold text-center text-slate-700">Track your mood like a sim</h2>
+      <LanguageToggle />
+      <h1 className="text-4xl font-bold mt-10 mb-2 text-center text-slate-700">{t('title')}</h1>
+      <h2 className="subtitle text-lg font-semibold text-center text-slate-700">{t('subtitle')}</h2>
       <div className="filters grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-24 mt-20 mx-auto bg-white px-8 md:px-16 py-12 rounded-4xl shadow-lg">
         {activeFilters.map((mood, index) => (
           <div key={mood} className={`${index === activeFilters.length / 2 ? 'pt-12 md:pt-0' : ''}`}>
-            <MoodSlider label={mood} value={values[mood]} onChange={(value) => handleChange(mood, value)}/>
+            <MoodSlider label={mood} value={values[mood]} version={version} onChange={(value) => handleChange(mood, value)}/>
           </div>
         ))}
       </div>
@@ -150,7 +154,7 @@ export default function Home() {
       </div>
 
       <div className="text-center text-slate-500 mt-20">
-        <p>Choisissez votre version du jeu</p>
+        <p>{t('gameVersion')}</p>
         <div className="flex justify-center space-x-4 mt-4">
           {[0, 1, 2, 3].map((v) => (
             <button

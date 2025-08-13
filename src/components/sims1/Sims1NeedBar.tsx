@@ -1,5 +1,6 @@
 // src/components/Sims1NeedBar.tsx
 import '../styles/sims1.css';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 type Sims1NeedsProps = {
     label: string;
@@ -7,10 +8,11 @@ type Sims1NeedsProps = {
 };
 
 export default function Sims1NeedBar({ label, value }: Sims1NeedsProps) {
+    const { getVersionTranslation } = useLanguage();
     return (
         <div className="text-center sims1-need-bar">
             <div>
-                <span>{label}</span>
+                <span>{getVersionTranslation(0, label)}</span>
             </div>
             <div className={`w-full sims1-need-progressbar overflow-hidden 
                 ${value > 70 ? 'sims1-70-min' :

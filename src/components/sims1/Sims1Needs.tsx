@@ -22,16 +22,16 @@ export default function Sims1Needs({ moods }: Sims1NeedsProps) {
                     <h2 className="text-2xl font-medium p-0 m-0">Needs</h2>
                     <div className="flex">
                         <div className="need-bars-col">
-                            <Sims1NeedBar label="Hunger" value={getMoodValue('hunger')} />
-                            <Sims1NeedBar label="Comfort" value={getMoodValue('comfort')} />
-                            <Sims1NeedBar label="Hygiene" value={getMoodValue('hygiene')} />
-                            <Sims1NeedBar label="Bladder" value={getMoodValue('bladder')} />
+                            <Sims1NeedBar label="hunger" value={getMoodValue('hunger')} />
+                            <Sims1NeedBar label="comfort" value={getMoodValue('comfort')} />
+                            <Sims1NeedBar label="hygiene" value={getMoodValue('hygiene')} />
+                            <Sims1NeedBar label="bladder" value={getMoodValue('bladder')} />
                         </div>
                         <div className="need-bars-col">
-                            <Sims1NeedBar label="Energy" value={getMoodValue('energy')} />
-                            <Sims1NeedBar label="Fun" value={getMoodValue('fun')} />
-                            <Sims1NeedBar label="Social" value={getMoodValue('social')} />
-                            <Sims1NeedBar label="Room" value={getMoodValue('room')} />
+                            <Sims1NeedBar label="energy" value={getMoodValue('energy')} />
+                            <Sims1NeedBar label="fun" value={getMoodValue('fun')} />
+                            <Sims1NeedBar label="social" value={getMoodValue('social')} />
+                            <Sims1NeedBar label="room" value={getMoodValue('room')} />
                         </div>
                     </div>
                 </div>

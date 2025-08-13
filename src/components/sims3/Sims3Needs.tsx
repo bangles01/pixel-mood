@@ -18,12 +18,12 @@ export default function Sims3Needs({ moods }: Sims3NeedsProps) {
                 <div className="sims3-needs">
                     <img src={`/assets/sims3/illustration.png`} alt="Sims3 Needs" className="illustration rounded-tl-xl rounded-bl-xl" />
                     <div className="sims3-needs-content grid grid-cols-2 gap-1 mt-4">
-                        <Sims3NeedBar label="Hunger" value={getMoodValue('hunger')} />
-                        <Sims3NeedBar label="Social" value={getMoodValue('social')} />
-                        <Sims3NeedBar label="Bladder" value={getMoodValue('bladder')} />
-                        <Sims3NeedBar label="Hygiene" value={getMoodValue('hygiene')} />
-                        <Sims3NeedBar label="Energy" value={getMoodValue('energy')} />
-                        <Sims3NeedBar label="Fun" value={getMoodValue('fun')} />
+                        <Sims3NeedBar label="hunger" value={getMoodValue('hunger')} />
+                        <Sims3NeedBar label="social" value={getMoodValue('social')} />
+                        <Sims3NeedBar label="bladder" value={getMoodValue('bladder')} />
+                        <Sims3NeedBar label="hygiene" value={getMoodValue('hygiene')} />
+                        <Sims3NeedBar label="energy" value={getMoodValue('energy')} />
+                        <Sims3NeedBar label="fun" value={getMoodValue('fun')} />
                     </div>
                 </div>
             </div>

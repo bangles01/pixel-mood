@@ -1,5 +1,6 @@
 // src/components/Sims4NeedBar.tsx
 import '../styles/sims4.css';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 type Sims4NeedsProps = {
     label: string;
@@ -7,12 +8,13 @@ type Sims4NeedsProps = {
 };
 
 export default function Sims4NeedBar({ label, value }: Sims4NeedsProps) {
+    const { getVersionTranslation } = useLanguage();
     const normalizedValue: number = 15 + (value / 100) * 85;
 
     return (
         <div className="sims4-need-bar flex flex-col items-center">
             <div className="sims4-need-label flex items-center justify-between px-2">
-                <span>{label}</span>
+                <span>{getVersionTranslation(3, label)}</span>
             </div>
             <div className={`flex-1 w-full flex items-center px-3 relative 
                 ${value > 85 ? 'sims4-85-min' :

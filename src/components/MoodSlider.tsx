@@ -1,17 +1,20 @@
 // src/components/MoodSlider.tsx
 import './styles/sims1.css';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 type MoodSliderProps = {
     label: string;
     value: number;
+    version: number;
     onChange: (value: number) => void;
 };
 
-export default function MoodSlider({ label, value, onChange }: MoodSliderProps) {
+export default function MoodSlider({ label, value, version, onChange }: MoodSliderProps) {
+    const { getVersionTranslation } = useLanguage();
     return (
         <div>
             <div className="flex justify-between items-center mb-2">
-                <h2 className="text-lg font-semibold capitalize text-gray-800 mb-0">{label}</h2>
+                <h2 className="text-lg font-semibold capitalize text-gray-800 mb-0">{getVersionTranslation(version, label)}</h2>
                 <span className='block'>{value}</span>
             </div>
             <div className="relative w-full">
