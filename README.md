@@ -5,7 +5,7 @@ A web application inspired by The Sims franchise that recreates the iconic mood 
 You can check the online version at [pixelmood.fr](https://pixelmood.fr/).
 
 <div align="center" style="margin: 40px 0;">
-<img src="public/preview.png" alt="Pixel Mood Preview" width="600" style="border-radius: 12px;">
+<img src="public/preview.gif" alt="Pixel Mood Preview" width="600" style="border-radius: 12px;">
 </div>
 
 ## Features
